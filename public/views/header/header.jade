@@ -1,0 +1,14 @@
+header(ng-controller="HeaderController as header")
+  .logo
+    h1(ng-bind="app.title()")
+  nav
+    ul.fa-ul
+      li
+        i.fa.fa-li.fa-search
+        a(href="#", ng-click="", translate) Search
+      li
+        i.fa.fa-li.fa-sign-in
+        a(href="#", ng-click="", translate) Sign in
+      li
+        i.fa.fa-li.fa-sign-out
+        a(href="#", ng-click="", translate) Sign out

@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko\n"
+
+#: views/footer/footer.html:1
+msgid "About"
+msgstr "정보"
+
+#: views/footer/footer.html:1
+msgid "Help"
+msgstr "도움말"
+
+#: views/header/header.html:1
+msgid "Search"
+msgstr "검색"
+
+#: views/header/header.html:1
+msgid "Sign in"
+msgstr "로그인"
+
+#: views/header/header.html:1
+msgid "Sign out"
+msgstr "로그아웃"
+
+#: views/index/index.html:1
+msgid "Welcome!"
+msgstr "환영합니다!"

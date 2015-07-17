@@ -1,0 +1,75 @@
+mixin ie(condition)
+  <!--[!{condition}]>
+  block
+  <![endif]-->
+
+doctype html
+html.no-js(ng-app="app", ng-strict-di)
+  head
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title(ng-bind="app.title()") {{TITLE}}
+    meta(name="description", content="{{DESCRIPTION}}")
+    meta(property="og:title", content="{{TITLE}}")
+    meta(property="og:description", content="{{DESCRIPTION}}")
+    meta(property="og:image", content="{{LOGO_URL}}")
+    meta(property="og:site_name", content="{{TITLE}}")
+    meta(property="og:locale", content="en_US")
+    meta(property="og:locale:alternate", content="ko_KR")
+    style.
+      .ng-hide { display: none !important; }
+      [ng-cloak], .ng-cloak { display: none !important; }
+    base(href="/")
+    link(rel="apple-touch-icon", href="apple-touch-icon.png")
+    link(href='//fonts.googleapis.com/earlyaccess/nanumgothic.css', rel='stylesheet', type='text/css')
+    // build:css(bower_components) vendor.css
+    //- bower:css
+    //- endbower
+    // endbuild
+    // build:css app.css
+    //- inject:css
+    //- endinject
+    // endbuild
+  body
+    +ie('if lt IE 9')
+      p.browsehappy
+        | You are using an <strong>outdated</strong> browser.
+        | Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<br>
+        | 인터넷 익스플로러는 버전 9 이상만 지원합니다.
+        | <a href="http://browsehappy.com/">최신 버전으로 업그레이드하시거나 크롬 혹은 파이어폭스를 사용하세요</a>.
+
+    .loading-container
+      loading
+
+    //- header-container
+    .header-container(ng-include="'views/header/header.html'")
+
+    //- main-container
+    .main-container(ui-view="")
+
+    //- footer-container
+    .footer-container(ng-include="'views/footer/footer.html'")
+
+    script.
+      FileAPI = {
+        jsUrl: '/assets/FileAPI.min.js',
+        flashUrl: '/assets/FileAPI.flash.swf',
+      };
+    // build:js(bower_components) vendor.js
+    //- bower:js
+    //- endbower
+    // endbuild
+    // build:js app.js
+    //- inject:js
+    //- endinject
+    // endbuild
+
+    script.
+      if ({{USE_GA}}) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{GA_CODE}}', 'auto');
+      }

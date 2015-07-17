@@ -1,0 +1,34 @@
+// Colors
+$color-white: #fff;
+$color-silver: #ddd;
+$color-gray: #aaa;
+$color-black: #111;
+$color-lightsilver: lighten($color-silver, 10%);
+$color-dimgray: darken($color-gray, 20%);
+
+// Fonts
+$font-family: 'Nanum Gothic', sans-serif !default;
+
+// Mixins
+@mixin left { float: left !important; }
+@mixin right { float: right !important; }
+@mixin clearfix {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+@mixin parent($width:100%) {
+  display: table;
+  width: $width;
+}
+@mixin child($width:50%) {
+  display: table-cell;
+  width: $width;
+}
+
+@mixin border-top {
+  border-top: 1px dotted $color-blue;
+}
+@mixin border-bottom {
+  border-bottom: 1px dotted $color-blue;
+}

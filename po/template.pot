@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: views/footer/footer.html:1
+msgid "About"
+msgstr ""
+
+#: views/footer/footer.html:1
+msgid "Help"
+msgstr ""
+
+#: views/header/header.html:1
+msgid "Search"
+msgstr ""
+
+#: views/header/header.html:1
+msgid "Sign in"
+msgstr ""
+
+#: views/header/header.html:1
+msgid "Sign out"
+msgstr ""
+
+#: views/index/index.html:1
+msgid "Welcome!"
+msgstr ""

@@ -1,0 +1,14 @@
+footer(ng-controller="FooterController as footer")
+  nav
+    ul.fa-ul
+      li
+        i.fa.fa-li.fa-info
+        a(ui-sref="index", translate) About
+      li
+        i.fa.fa-li.fa-question
+        a(ui-sref="index", translate) Help
+      li
+        i.fa.fa-li.fa-language
+        a(href="", ng-click="footer.translate('en');") English
+        span /
+        a(href="", ng-click="footer.translate('ko');") 한국어

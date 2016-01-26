@@ -58,3 +58,9 @@ module.exports = (grunt) ->
         files: S3_FILES
 
   grunt.registerTask 'default', ->
+
+  grunt.registerTask 'publish-staging', ->
+    grunt.task.run ['aws_s3:staging']
+
+  grunt.registerTask 'publish-production', ->
+    grunt.task.run ['aws_s3:production']

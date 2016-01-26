@@ -43,13 +43,16 @@ html.no-js(ng-app="app", ng-strict-di)
       loading
 
     //- header-container
-    .header-container(ng-include="'views/header/header.html'")
+    .header-container
+      .container(ng-include="'views/header/header.html'")
 
     //- main-container
-    .main-container(ui-view="")
+    .main-container
+      .container(ui-view="")
 
     //- footer-container
-    .footer-container(ng-include="'views/footer/footer.html'")
+    .footer-container
+      .container(ng-include="'views/footer/footer.html'")
 
     script.
       FileAPI = {

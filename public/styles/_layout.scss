@@ -1,0 +1,36 @@
+@import "common";
+
+$container-width: 1000px;
+
+.browsehappy {
+  padding: 20px;
+  background: $color-black;
+  color: $color-white;
+  font-size: 1.5em;
+  a {
+    color: $color-white;
+    text-decoration: underline;
+  }
+}
+
+.loading-container {
+}
+
+@mixin container($max-width:$container-width) {
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}
+
+.header-container {
+  @include container;
+}
+
+.main-container {
+  @include container;
+}
+
+.footer-container {
+  @include container;
+}

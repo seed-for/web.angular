@@ -38,22 +38,17 @@ gulp.task 'serve-dist:staging', ['env:staging'], (done) ->
 gulp.task 'serve-dist:production', ['env:production'], (done) ->
   run 'serve-dist', done
 
-gulp.task 'build:staging', ['env:staging'], (done) ->
-  run 'build', done
-gulp.task 'build:production', ['env:production'], (done) ->
-  run 'build', done
-
-gulp.task 'build', (done) ->
-  run 'compile', 'optimize', done
-
-gulp.task 'clean', (done) ->
-  log 'Cleaning files..'
-  del ['.tmp', 'dist'], done
-
 gulp.task 'publish:staging', ['build:staging'], (done) ->
   run 'upload:staging', done
 gulp.task 'publish:production', ['build:production'], (done) ->
   run 'upload:production', done
+
+gulp.task 'build', (done) ->
+  run 'compile', 'optimize', done
+gulp.task 'build:staging', ['env:staging'], (done) ->
+  run 'build', done
+gulp.task 'build:production', ['env:production'], (done) ->
+  run 'build', done
 
 gulp.task 'upload:staging', ['grunt-publish-staging']
 gulp.task 'upload:production', ['grunt-publish-production']
@@ -62,6 +57,10 @@ gulp.task 'upload:production', ['grunt-publish-production']
 
 gulp.task 'compile', (done) ->
   run 'clean', ['jade', 'coffee', 'scss', 'asset'], 'index', done
+
+gulp.task 'clean', (done) ->
+  log 'Cleaning files..'
+  del ['.tmp', 'dist'], done
 
 gulp.task 'jade', -> jade()
 gulp.task 'coffee', -> coffee()

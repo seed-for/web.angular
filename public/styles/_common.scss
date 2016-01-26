@@ -21,9 +21,10 @@ $font-family: 'Nanum Gothic', sans-serif !default;
   display: table;
   width: $width;
 }
-@mixin child($width:50%) {
+@mixin child($width:50%, $align:middle) {
   display: table-cell;
   width: $width;
+  vertical-align: $align;
 }
 
 @mixin border-top {
